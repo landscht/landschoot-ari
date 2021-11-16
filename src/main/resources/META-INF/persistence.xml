@@ -4,6 +4,7 @@
              version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
     <persistence-unit name="todos" transaction-type="RESOURCE_LOCAL">
         <class> entities.Employee </class>
+        <class> entities.Entreprise </class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
             <property name="javax.persistence.jdbc.url"
@@ -12,7 +13,7 @@
             <property name="javax.persistence.jdbc.password" value="" />
 
             <!-- EclipseLink should create the database schema automatically -->
-            <property name="eclipselink.ddl-generation" value="drop-and-create-table" />
+            <property name="eclipselink.ddl-generation" value="create-tables" />
             <property name="eclipselink.ddl-generation.output-mode"
                       value="database" />
         </properties>

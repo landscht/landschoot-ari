@@ -1,7 +1,6 @@
 package entities;
 
 import javax.persistence.*;
-import java.util.UUID;
 
 @Entity
 public class Employee {
@@ -13,6 +12,17 @@ public class Employee {
     private String firstname;
 
     private String lastname;
+
+    public Entreprise getEntreprise() {
+        return entreprise;
+    }
+
+    public void setEntreprise(Entreprise entreprise) {
+        this.entreprise = entreprise;
+    }
+
+    @ManyToOne
+    private Entreprise entreprise;
 
     public int getId() {
         return id;
