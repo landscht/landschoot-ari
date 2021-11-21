@@ -1,14 +1,17 @@
 package entities;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Entreprise {
+public class Projet {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private int id;
 
     private String nom;
@@ -28,4 +31,5 @@ public class Entreprise {
     public void setNom(String nom) {
         this.nom = nom;
     }
+
 }

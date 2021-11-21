@@ -5,6 +5,9 @@
     <persistence-unit name="todos" transaction-type="RESOURCE_LOCAL">
         <class> entities.Employee </class>
         <class> entities.Entreprise </class>
+        <class> entities.Adresse </class>
+        <class> entities.Projet </class>
+        <class> entities.Equipe </class>
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
             <property name="javax.persistence.jdbc.url"

@@ -1,6 +1,8 @@
 package entities;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Employee {
@@ -13,6 +15,18 @@ public class Employee {
 
     private String lastname;
 
+    @OneToOne(cascade = CascadeType.PERSIST)
+    private Adresse adresse;
+
+    @ManyToMany
+    private List<Projet> projets = new ArrayList<>();
+
+    @ManyToOne
+    private Entreprise entreprise;
+
+    @ManyToOne
+    private Equipe equipe;
+
     public Entreprise getEntreprise() {
         return entreprise;
     }
@@ -20,9 +34,6 @@ public class Employee {
     public void setEntreprise(Entreprise entreprise) {
         this.entreprise = entreprise;
     }
-
-    @ManyToOne
-    private Entreprise entreprise;
 
     public int getId() {
         return id;
@@ -46,5 +57,29 @@ public class Employee {
 
     public void setLastname(String lastname) {
         this.lastname = lastname;
+    }
+
+    public Adresse getAdresse() {
+        return adresse;
+    }
+
+    public void setAdresse(Adresse adresse) {
+        this.adresse = adresse;
+    }
+
+    public List<Projet> getProjets() {
+        return projets;
+    }
+
+    public void setProjets(List<Projet> projets) {
+        this.projets = projets;
+    }
+
+    public Equipe getEquipe() {
+        return equipe;
+    }
+
+    public void setEquipe(Equipe equipe) {
+        this.equipe = equipe;
     }
 }
